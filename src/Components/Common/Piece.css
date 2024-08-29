@@ -4,58 +4,99 @@
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  width: 180px;
-  height: 180px;
   cursor: pointer;
   background-color: white;
-
   border-style: solid;
-  border-width: 20px;
-
-  box-shadow: inset 0 8px rgba(0, 0, 0, 0.3), -1px 4px rgba(0, 0, 0, 0.3);
   transition: box-shadow 0.5s ease-in-out;
 }
 
-.piece:hover {
-  box-shadow: inset -1px 4px rgba(0, 0, 0, 0.3), 0 8px rgba(0, 0, 0, 0.3),
-    0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1),
-    0 0 0 60px rgba(255, 255, 255, 0.1) !important;
-}
-
-.piece img {
-  height: 70px;
-}
-
-@media (max-width: 768px) {
+/* Large Desktops (1440px and up) */
+@media (min-width: 1440px) {
   .piece {
-    width: 100px;
-    height: 100px;
+    width: 140px;
+    height: 140px;
+    border-width: 12px;
   }
-  .piece:hover {
-    box-shadow: inset -1px 4px rgba(0, 0, 0, 0.3), -1px 4px rgba(0, 0, 0, 0.3),
-      0 0 0 5px rgba(255, 255, 255, 0.1), 0 0 0 10px rgba(255, 255, 255, 0.1),
-      0 0 0 15px rgba(255, 255, 255, 0.1);
-  }
-
   .piece img {
-    height: 40px;
+    height: 60px;
   }
 }
 
-@media (max-width: 1024px) {
+/* Desktops (1024px - 1440px) */
+@media (min-width: 1024px) and (max-width: 1439px) {
   .piece {
     width: 120px;
     height: 120px;
     border-width: 10px;
   }
-  
-  .piece:hover {
-    box-shadow: inset -1px 4px rgba(0, 0, 0, 0.3), -1px 4px rgba(0, 0, 0, 0.3),
-      0 0 0 10px rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1),
-      0 0 0 30px rgba(255, 255, 255, 0.1);
-  }
-
   .piece img {
     height: 50px;
   }
+}
+
+/* Tablets and Small Laptops (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .piece {
+    width: 100px;
+    height: 100px;
+    border-width: 8px;
+  }
+  .piece img {
+    height: 40px;
+  }
+}
+
+/* Large Mobile Devices (550px - 768px) */
+@media (min-width: 550px) and (max-width: 767px) {
+  .piece {
+    width: 90px;
+    height: 90px;
+    border-width: 6px;
+  }
+  .piece img {
+    height: 35px;
+  }
+}
+
+/* Medium Mobile Devices (425px - 550px) */
+@media (min-width: 425px) and (max-width: 549px) {
+  .piece {
+    width: 80px;
+    height: 80px;
+    border-width: 5px;
+  }
+  .piece img {
+    height: 30px;
+  }
+}
+
+/* Small Mobile Devices (320px - 425px) */
+@media (min-width: 320px) and (max-width: 424px) {
+  .piece {
+    width: 70px;
+    height: 70px;
+    border-width: 4px;
+  }
+  .piece img {
+    height: 25px;
+  }
+}
+
+/* Extra Small Devices (Less than 320px) */
+@media (max-width: 319px) {
+  .piece {
+    width: 60px;
+    height: 60px;
+    border-width: 3px;
+  }
+  .piece img {
+    height: 20px;
+  }
+}
+
+/* Hover Effects for all ranges */
+.piece:hover {
+  box-shadow: inset -1px 4px rgba(0, 0, 0, 0.3), 0 8px rgba(0, 0, 0, 0.3),
+    0 0 0 10px rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1),
+    0 0 0 30px rgba(255, 255, 255, 0.1) !important;
 }

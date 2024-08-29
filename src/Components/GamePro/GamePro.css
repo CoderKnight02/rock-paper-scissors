@@ -1,143 +1,243 @@
+/* Default styles for 1440px+ (large desktops) */
 .game-pro {
-  height: 600px;
-  width: 900px;
+  height: 350px;
+  width: 350px;
   margin: auto;
+  margin-top: 50px;
   padding: 25px;
   background: url(../../images/bg-pentagon.svg);
   background-repeat: no-repeat;
   background-origin: content-box;
   background-position: center;
-  background-size: 500px;
+  background-size: 350px;
   position: relative;
 }
 
 .game-pro > :nth-child(1) {
   position: absolute;
-  bottom: 0px;
-  right: 230px;
-}
-
-.game-pro > :nth-child(3) {
-  position: absolute;
-  bottom: 0;
-  left: 230px;
-}
-
-.game-pro > :nth-child(4) {
-  position: absolute;
-  bottom: 280px;
-  left: 150px;
-}
-
-.game-pro > :nth-child(5) {
-  position: absolute;
-  bottom: 280px;
-  right: 150px;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .game-pro > :nth-child(2) {
   position: absolute;
-  top: 15px;
-  right: 395px;
+  top: 35%;
+  left: 20px;
+  transform: translateY(-35%);
 }
 
-@media (max-width: 1024px) {
+.game-pro > :nth-child(3) {
+  position: absolute;
+  top: 35%;
+  right: 20px;
+  transform: translateY(-35%);
+}
+
+.game-pro > :nth-child(4) {
+  position: absolute;
+  bottom: 0px;
+  left: 60px;
+}
+
+.game-pro > :nth-child(5) {
+  position: absolute;
+  bottom: 0px;
+  right: 60px;
+}
+
+/* Desktops (1025px - 1439px) */
+@media (min-width: 1025px) and (max-width: 1439px) {
   .game-pro {
-    height: 500px;
-    width: 500px;
-    background-size: 400px;
+    height: 300px;
+    width: 300px;
+    background-size: 300px;
+    margin-top: 30px;
   }
 
   .game-pro > :nth-child(1) {
-    bottom: 255px;
-    right: 29px;
-  }
-
-  .game-pro > :nth-child(3) {
-    bottom: 35px;
-    left: 90px;
-  }
-
-  .game-pro > :nth-child(4) {
-    bottom: 255px;
-    left: 30px;
-  }
-
-  .game-pro > :nth-child(5) {
-    bottom: 35px;
-    right: 90px;
+    top: -15px;
   }
 
   .game-pro > :nth-child(2) {
-    top: 29px;
-    right: 220px;
-  }
-}
-
-@media (max-width: 550px) {
-  .game-pro {
-    height: 400px;
-    width: 300px;
-    background-size: 300px;
-  }
-
-  .game-pro > :nth-child(1) {
-    bottom: 190px;
-    right: -15px;
-  }
-
-  .game-pro > :nth-child(3) {
-    bottom: 20px;
-    left: 25px;
-  }
-
-  .game-pro > :nth-child(4) {
-    bottom: 190px;
     left: -15px;
   }
 
-  .game-pro > :nth-child(5) {
-    bottom: 25px;
-    right: 30px;
-  }
-
-  .game-pro > :nth-child(2) {
-    top: 25px;
-    right: 115px;
-  }
-}
-
-@media (max-width: 425px) {
-  .game-pro {
-    min-height: 300px;
-    width: 300px;
-    background-size: 300px;
-  }
-  .game-pro > :nth-child(1) {
-    bottom: 195px;
-    right: -10px;
-  }
-
   .game-pro > :nth-child(3) {
-    bottom: 30px;
-    left: 30px;
+    right: -15px;
   }
 
   .game-pro > :nth-child(4) {
-    bottom: 195px;
-    left: -10px;
+    bottom: -10px;
+    left: 20px;
   }
 
   .game-pro > :nth-child(5) {
-    bottom: 30px;
-    right: 25px;
+    bottom: -10px;
+    right: 20px;
+  }
+}
+
+/* Tablets and Small Laptops (768px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .game-pro {
+    height: 275px;
+    width: 275px;
+    background-size: 275px;
+    margin-top: 20px;
+  }
+
+  .game-pro > :nth-child(1) {
+    top: -2px;
   }
 
   .game-pro > :nth-child(2) {
-    top: 25px;
-    right: 115px;
+    left: -2px;
+  }
+
+  .game-pro > :nth-child(3) {
+    right: -2px;
+  }
+
+  .game-pro > :nth-child(4) {
+    bottom: -2px;
+    left: 40px;
+  }
+
+  .game-pro > :nth-child(5) {
+    bottom: -2px;
+    right: 40px;
   }
 }
+
+/* Large Mobile Devices (550px - 767px) */
+@media (min-width: 551px) and (max-width: 768px) {
+  .game-pro {
+    height: 250px;
+    width: 250px;
+    background-size: 250px;
+    margin-top: 20px;
+  }
+
+  .game-pro > :nth-child(1) {
+    top: 10px;
+  }
+
+  .game-pro > :nth-child(2) {
+    left: 12px;
+  }
+
+  .game-pro > :nth-child(3) {
+    right: 12px;
+  }
+
+  .game-pro > :nth-child(4) {
+    bottom: 12px;
+    left: 35px;
+  }
+
+  .game-pro > :nth-child(5) {
+    bottom: 12px;
+    right: 35px;
+  }
+}
+
+/* Medium Mobile Devices (426px - 550px) */
+@media (min-width: 426px) and (max-width: 550px) {
+  .game-pro {
+    height: 225px;
+    width: 225px;
+    background-size: 225px;
+    margin-top: 15px;
+  }
+
+  .game-pro > :nth-child(1) {
+    top: 10px;
+  }
+
+  .game-pro > :nth-child(2) {
+    left: 10px;
+  }
+
+  .game-pro > :nth-child(3) {
+    right: 10px;
+  }
+
+  .game-pro > :nth-child(4) {
+    bottom: 10px;
+    left: 30px;
+  }
+
+  .game-pro > :nth-child(5) {
+    bottom: 10px;
+    right: 30px;
+  }
+}
+
+/* Small Mobile Devices (320px - 425px) */
+@media (min-width: 321px) and (max-width: 425px) {
+  .game-pro {
+    height: 200px;
+    width: 200px;
+    background-size: 200px;
+    margin-top: 50px;
+  }
+
+  .game-pro > :nth-child(1) {
+    top: 8px;
+  }
+
+  .game-pro > :nth-child(2) {
+    left: 8px;
+  }
+
+  .game-pro > :nth-child(3) {
+    right: 8px;
+  }
+
+  .game-pro > :nth-child(4) {
+    bottom: 8px;
+    left: 25px;
+  }
+
+  .game-pro > :nth-child(5) {
+    bottom: 8px;
+    right: 25px;
+  }
+}
+
+/* Extra Small Devices (Less than 320px) */
+@media (max-width: 320px) {
+  .game-pro {
+    height: 150px;
+    width: 150px;
+    background-size: 150px;
+    margin-top: 100px;
+  }
+
+  .game-pro > :nth-child(1) {
+    top: 5px;
+  }
+
+  .game-pro > :nth-child(2) {
+    left: 5px;
+  }
+
+  .game-pro > :nth-child(3) {
+    right: 5px;
+  }
+
+  .game-pro > :nth-child(4) {
+    bottom: 5px;
+    left: 20px;
+  }
+
+  .game-pro > :nth-child(5) {
+    bottom: 5px;
+    right: 20px;
+  }
+}
+
 
 .game-result {
   display: flex;
