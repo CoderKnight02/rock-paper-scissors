@@ -1,0 +1,61 @@
+.piece {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 180px;
+  height: 180px;
+  cursor: pointer;
+  background-color: white;
+
+  border-style: solid;
+  border-width: 20px;
+
+  box-shadow: inset 0 8px rgba(0, 0, 0, 0.3), -1px 4px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.5s ease-in-out;
+}
+
+.piece:hover {
+  box-shadow: inset -1px 4px rgba(0, 0, 0, 0.3), 0 8px rgba(0, 0, 0, 0.3),
+    0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1),
+    0 0 0 60px rgba(255, 255, 255, 0.1) !important;
+}
+
+.piece img {
+  height: 70px;
+}
+
+@media (max-width: 768px) {
+  .piece {
+    width: 100px;
+    height: 100px;
+  }
+  .piece:hover {
+    box-shadow: inset -1px 4px rgba(0, 0, 0, 0.3), -1px 4px rgba(0, 0, 0, 0.3),
+      0 0 0 5px rgba(255, 255, 255, 0.1), 0 0 0 10px rgba(255, 255, 255, 0.1),
+      0 0 0 15px rgba(255, 255, 255, 0.1);
+  }
+
+  .piece img {
+    height: 40px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .piece {
+    width: 120px;
+    height: 120px;
+    border-width: 10px;
+  }
+  
+  .piece:hover {
+    box-shadow: inset -1px 4px rgba(0, 0, 0, 0.3), -1px 4px rgba(0, 0, 0, 0.3),
+      0 0 0 10px rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1),
+      0 0 0 30px rgba(255, 255, 255, 0.1);
+  }
+
+  .piece img {
+    height: 50px;
+  }
+}
