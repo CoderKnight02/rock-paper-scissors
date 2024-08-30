@@ -95,6 +95,13 @@
   font-size: 1rem;
 }
 
+.loading {
+  height: 200px;
+  width: 200px;
+  background-color: gray;
+  border-radius: 50%;
+}
+
 .veredict {
   margin-top: 0;
   margin-bottom: 20px;
@@ -148,10 +155,12 @@
   .game-result > div img {
     width: 110px;
   }
-  .inner-shadow {
+  .inner-shadow,
+  .loading {
     height: 220px;
     width: 220px;
   }
+
   .game-result-button {
     width: 220px;
     font-size: 1.1rem;
@@ -207,7 +216,8 @@
   .game-result > div img {
     width: 90px;
   }
-  .inner-shadow {
+  .inner-shadow,
+  .loading {
     height: 180px;
     width: 180px;
   }
@@ -218,7 +228,7 @@
   .veredict {
     font-size: 3rem;
   }
-  
+
   .winner {
     box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1),
       0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1) !important;
@@ -269,7 +279,8 @@
   .game-result > div img {
     width: 60px;
   }
-  .inner-shadow {
+  .inner-shadow,
+  .loading {
     height: 140px;
     width: 140px;
   }
@@ -330,7 +341,8 @@
   .game-result > div img {
     width: 60px;
   }
-  .inner-shadow {
+  .inner-shadow,
+  .loading {
     height: 120px;
     width: 120px;
   }
@@ -406,7 +418,8 @@
     text-align: center; /* Center align content inside the second item */
   }
 
-  .inner-shadow {
+  .inner-shadow,
+  .loading {
     height: 100px;
     width: 100px;
   }
@@ -473,7 +486,8 @@
     margin-top: 20px; /* Add some space above the second item */
     text-align: center; /* Center align content inside the second item */
   }
-  .inner-shadow {
+  .inner-shadow,
+  .loading {
     height: 90px;
     width: 90px;
   }
@@ -494,6 +508,3 @@
     box-shadow: 0px 2px rgba(255, 255, 255, 0.3);
   }
 }
-
-
-

@@ -24,6 +24,16 @@ footer > button {
   font-size: 1rem;
   transition: background-color 0.2s, color 0.2s;
 }
+@media (max-width: 780px) {
+  footer > button {
+    position: fixed;
+    bottom: 20px; /* Adjust if needed */
+    left: 50%;
+    transform: translateX(-50%);
+    right: auto; /* Reset right positioning */
+  }
+}
+
 footer > button:hover {
   color: hsl(217, 16%, 45%);
   background-color: white;
@@ -51,6 +61,10 @@ footer > button:hover {
   text-align: center;
 }
 
+.popup-content img{
+  width: 100%;
+}
+
 .popup-header {
   display: flex;
   justify-content: space-between;
@@ -68,10 +82,9 @@ footer > button:hover {
   border-style: none;
 }
 
-
-@media (max-width: 768px) {
-  .footer {
-    text-align: center;
-    margin-top: 40px;
+/* Small Mobile Devices (320px - 425px) */
+@media (max-width: 425px) {
+  .popup-content {
+    width: 250px;
   }
 }

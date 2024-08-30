@@ -8,10 +8,9 @@ import lizard from "../../images/icon-lizard.svg";
 import paper from "../../images/icon-paper.svg";  // Importing paper image here
 import { MyContext } from "../Providers/ScoreProvider";
 
-import { useState } from "react";
 
 function GamePro() {
-  const { count, setCount, selection, setSelection, computerSelection, setComputerSelection, result } = useContext(MyContext);
+  const { selection, setSelection, computerSelection, setComputerSelection, result, setResult } = useContext(MyContext);
 
 
   const pieces = [
@@ -59,18 +58,28 @@ function GamePro() {
 
           <div className="mid-sect">
             <p className="veredict">You {result}</p>
-            <button className="game-result-button" onClick={() => { setComputerSelection(0); setSelection(0) }}>Play Again</button>
+            <button
+              className="game-result-button" onClick={
+                () => {
+                  setComputerSelection(0); setSelection(0); setResult("...")
+                }}
+              disabled={computerSelection === 0}
+            >Play Again</button>
           </div>
 
-
-          <div className={`round-corner ${result === 'lose' ? 'winner' : ''}`} style={{
-            borderColor: `${pieces[computerSelection - 1].color}`,
-            boxShadow: `0px 9px rgba(${hexToRgb(pieces[computerSelection - 1].color)}, 0.4)`,
-          }}>
-            <div className="inner-shadow" >
-              <img src={pieces[computerSelection - 1].url} alt='piece'></img>
+          {computerSelection !== 0 ? (
+            <div className={`round-corner ${result === 'lose' ? 'winner' : ''}`} style={{
+              borderColor: `${pieces[computerSelection - 1].color}`,
+              boxShadow: `0px 9px rgba(${hexToRgb(pieces[computerSelection - 1].color)}, 0.4)`,
+            }}>
+              <div className="inner-shadow" >
+                <img src={pieces[computerSelection - 1].url} alt='piece'></img>
+              </div>
             </div>
-          </div>
+          ) : (
+            <div className="loading"></div>
+          )}
+
 
         </div >
       )
