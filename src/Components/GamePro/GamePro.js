@@ -21,7 +21,7 @@ function GamePro() {
     { url: spock, color: "#87cefa", piece: 4 },
     { url: paper, color: "#6495ed", piece: 5 }
   ];
- 
+
 
   function hexToRgb(hex) {
     // Remove the leading # if it's there
@@ -49,7 +49,7 @@ function GamePro() {
         <div className="game-result">
 
           <div className={`round-corner ${result === 'win' ? 'winner' : ''}`} style={{
-            border: `25px solid ${pieces[selection - 1].color}`,
+            borderColor: `${pieces[selection - 1].color}`,
             boxShadow: `0px 8px rgba(${hexToRgb(pieces[selection - 1].color)}, 0.3)`,
           }}>
             <div className="inner-shadow">
@@ -64,7 +64,7 @@ function GamePro() {
 
 
           <div className={`round-corner ${result === 'lose' ? 'winner' : ''}`} style={{
-            border: `25px solid ${pieces[computerSelection - 1].color}`,
+            borderColor: `${pieces[computerSelection - 1].color}`,
             boxShadow: `0px 9px rgba(${hexToRgb(pieces[computerSelection - 1].color)}, 0.4)`,
           }}>
             <div className="inner-shadow" >

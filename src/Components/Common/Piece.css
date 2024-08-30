@@ -22,8 +22,8 @@
   }
 }
 
-/* Desktops (1024px - 1440px) */
-@media (min-width: 1024px) and (max-width: 1439px) {
+/* Desktops (1025px - 1439px) */
+@media (min-width: 1025px) and (max-width: 1439px) {
   .piece {
     width: 120px;
     height: 120px;
@@ -35,7 +35,7 @@
 }
 
 /* Tablets and Small Laptops (768px - 1024px) */
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 769px) and (max-width: 1024px) {
   .piece {
     width: 100px;
     height: 100px;
@@ -47,23 +47,23 @@
 }
 
 /* Large Mobile Devices (550px - 768px) */
-@media (min-width: 550px) and (max-width: 767px) {
+@media (min-width: 551px) and (max-width: 768px) {
   .piece {
     width: 90px;
     height: 90px;
-    border-width: 6px;
+    border-width: 8px;
   }
   .piece img {
     height: 35px;
   }
 }
 
-/* Medium Mobile Devices (425px - 550px) */
-@media (min-width: 425px) and (max-width: 549px) {
+/* Medium Mobile Devices (426px - 550px) */
+@media (min-width: 426px) and (max-width: 550px) {
   .piece {
     width: 80px;
     height: 80px;
-    border-width: 5px;
+    border-width: 7px;
   }
   .piece img {
     height: 30px;
@@ -71,11 +71,11 @@
 }
 
 /* Small Mobile Devices (320px - 425px) */
-@media (min-width: 320px) and (max-width: 424px) {
+@media (min-width: 321px) and (max-width: 425px) {
   .piece {
     width: 70px;
     height: 70px;
-    border-width: 4px;
+    border-width: 6px;
   }
   .piece img {
     height: 25px;
@@ -83,11 +83,11 @@
 }
 
 /* Extra Small Devices (Less than 320px) */
-@media (max-width: 319px) {
+@media (max-width: 320px) {
   .piece {
     width: 60px;
     height: 60px;
-    border-width: 3px;
+    border-width: 5px;
   }
   .piece img {
     height: 20px;
