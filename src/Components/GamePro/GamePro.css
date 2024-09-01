@@ -112,9 +112,26 @@
   font-family: "Barlow Semi Condensed";
 }
 
+/* Apply the animation to the winner class with a delay */
 .winner {
   box-shadow: 0 0 0 30px rgba(255, 255, 255, 0.1),
-    0 0 0 60px rgba(255, 255, 255, 0.1), 0 0 0 90px rgba(255, 255, 255, 0.1) !important;
+    0 0 0 60px rgba(255, 255, 255, 0.1), 0 0 0 90px rgba(255, 255, 255, 0.1),
+    0 10px rgba(0, 0, 0, 0.5) !important;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate {
+  animation: fadeIn 0.5s ease-out;
 }
 
 /* Desktops (1025px - 1439px) */
@@ -170,7 +187,8 @@
   }
   .winner {
     box-shadow: 0 0 0 22px rgba(255, 255, 255, 0.1),
-      0 0 0 44px rgba(255, 255, 255, 0.1), 0 0 0 66px rgba(255, 255, 255, 0.1) !important;
+      0 0 0 44px rgba(255, 255, 255, 0.1), 0 0 0 66px rgba(255, 255, 255, 0.1),
+      0 8px rgba(0, 0, 0, 0.5) !important;
   }
 
   .round-corner {
@@ -231,7 +249,8 @@
 
   .winner {
     box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1),
-      0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1) !important;
+      0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1),
+      0 7px rgba(0, 0, 0, 0.5) !important;
   }
 
   .round-corner {
@@ -294,7 +313,8 @@
 
   .winner {
     box-shadow: 0 0 0 18px rgba(255, 255, 255, 0.1),
-      0 0 0 36px rgba(255, 255, 255, 0.1), 0 0 0 54px rgba(255, 255, 255, 0.1) !important;
+      0 0 0 36px rgba(255, 255, 255, 0.1), 0 0 0 54px rgba(255, 255, 255, 0.1),
+      0 7px rgba(0, 0, 0, 0.5) !important;
   }
 
   .round-corner {
@@ -363,7 +383,8 @@
 
   .winner {
     box-shadow: 0 0 0 15px rgba(255, 255, 255, 0.1),
-      0 0 0 30px rgba(255, 255, 255, 0.1), 0 0 0 45px rgba(255, 255, 255, 0.1) !important;
+      0 0 0 30px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1),
+      0 6px rgba(0, 0, 0, 0.5) !important;
   }
 
   .round-corner {
@@ -433,7 +454,8 @@
 
   .winner {
     box-shadow: 0 0 0 12px rgba(255, 255, 255, 0.1),
-      0 0 0 24px rgba(255, 255, 255, 0.1), 0 0 0 36px rgba(255, 255, 255, 0.1) !important;
+      0 0 0 24px rgba(255, 255, 255, 0.1), 0 0 0 36px rgba(255, 255, 255, 0.1),
+      0 7px rgba(0, 0, 0, 0.5) !important;
   }
 
   .round-corner {
@@ -500,7 +522,8 @@
   }
   .winner {
     box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.1),
-      0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 30px rgba(255, 255, 255, 0.1) !important;
+      0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 30px rgba(255, 255, 255, 0.1),
+      0 6px rgba(0, 0, 0, 0.5) !important;
   }
 
   .round-corner {

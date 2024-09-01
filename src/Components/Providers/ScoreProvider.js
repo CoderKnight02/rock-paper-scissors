@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from "react";
+import React, { createContext, useEffect, useState} from "react";
 
 export const MyContext = createContext();
 
@@ -9,8 +9,9 @@ export const ScoreProvider = ({ children }) => {
   });
 
   const [selection, setSelection] = useState(0);
-  const [result, setResult] = useState("win");
+  const [result, setResult] = useState("...");
   const [computerSelection, setComputerSelection] = useState(0);
+  
 
   useEffect(() => {
     sessionStorage.setItem("count", count);

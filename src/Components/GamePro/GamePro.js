@@ -47,7 +47,7 @@ function GamePro() {
       {selection !== 0 && (
         <div className="game-result">
 
-          <div className={`round-corner ${result === 'win' ? 'winner' : ''}`} style={{
+          <div className={`round-corner animate ${result === 'win' ? 'winner' : ''}`} style={{
             borderColor: `${pieces[selection - 1].color}`,
             boxShadow: `0px 8px rgba(${hexToRgb(pieces[selection - 1].color)}, 0.3)`,
           }}>
@@ -68,7 +68,7 @@ function GamePro() {
           </div>
 
           {computerSelection !== 0 ? (
-            <div className={`round-corner ${result === 'lose' ? 'winner' : ''}`} style={{
+            <div className={`round-corner animate ${result === 'lose' ? 'winner' : ''}`} style={{
               borderColor: `${pieces[computerSelection - 1].color}`,
               boxShadow: `0px 9px rgba(${hexToRgb(pieces[computerSelection - 1].color)}, 0.4)`,
             }}>
