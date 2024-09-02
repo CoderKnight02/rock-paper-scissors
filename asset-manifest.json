@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/your-repo-name/static/css/main.557308eb.css",
+    "main.js": "/your-repo-name/static/js/main.93996636.js",
+    "static/js/453.fcd006fd.chunk.js": "/your-repo-name/static/js/453.fcd006fd.chunk.js",
+    "static/media/logo-bonus.svg": "/your-repo-name/static/media/logo-bonus.9bf8aeb80c2526dee7c67aa5c1b74ccc.svg",
+    "static/media/image-rules-bonus.svg": "/your-repo-name/static/media/image-rules-bonus.513320fbf32ba9e4a81fba903a77b85f.svg",
+    "static/media/icon-lizard.svg": "/your-repo-name/static/media/icon-lizard.0f83914cca1adc9454d1bdceb17610b0.svg",
+    "static/media/icon-paper.svg": "/your-repo-name/static/media/icon-paper.8b57a6b108c1b8ae82931a39b10f96a2.svg",
+    "static/media/icon-spock.svg": "/your-repo-name/static/media/icon-spock.f4d7eee84cf50913d73967948d97d63a.svg",
+    "static/media/icon-scissors.svg": "/your-repo-name/static/media/icon-scissors.3b1a5d7eb0b2f1fd3e955865ec04d9ed.svg",
+    "index.html": "/your-repo-name/index.html",
+    "static/media/icon-rock.svg": "/your-repo-name/static/media/icon-rock.476e90a9646a87bb3645d2f09f4f7fba.svg",
+    "static/media/icon-close.svg": "/your-repo-name/static/media/icon-close.bde602ecd1a4e55e0c27137ed651e027.svg",
+    "static/media/bg-pentagon.svg": "/your-repo-name/static/media/bg-pentagon.1ad6d36532b75eb7d82c.svg",
+    "main.557308eb.css.map": "/your-repo-name/static/css/main.557308eb.css.map",
+    "main.93996636.js.map": "/your-repo-name/static/js/main.93996636.js.map",
+    "453.fcd006fd.chunk.js.map": "/your-repo-name/static/js/453.fcd006fd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.557308eb.css",
+    "static/js/main.93996636.js"
+  ]
+}
