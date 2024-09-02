@@ -4,18 +4,19 @@ import { MyContext } from "../Providers/ScoreProvider";
 import { hexToRgb } from '../Common/utiles';
 import "./Piece.css";
 function Piece(props) {
-  const { setSelection, setComputerSelection, setResult, setCount, userRef, computerRef } = useContext(MyContext);
+  const { setSelection, setComputerSelection, setResult, setCount } = useContext(MyContext);
 
   const ans = [
-    //rock,scissors,lizard,spock,paper
-    [false, true, true, false, false], // Rock
-    [false, false, false, true, true], // Scissors
+    //rock scissors lizard spock paper
+    [false, true,   true,  false, false], // Rock
+    [false, false, true, false, true], // Scissors
     [false, false, false, true, true], // Lizard
-    [false, true, false, false, false], // Spock
+    [true, true, false, false, false], // Spock
     [true, false, false, true, false] // Paper
   ];
 
   return (
+
     <div
       className="piece"
       style={{
@@ -54,10 +55,6 @@ function Piece(props) {
 
       }
       }
-
-
-
-
     >
       <img src={props.url} alt="Piece"></img>
     </div>
