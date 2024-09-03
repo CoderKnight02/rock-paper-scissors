@@ -3,7 +3,7 @@
   height: 350px;
   width: 350px;
   margin: auto;
-  margin-top: 50px;
+  margin-top: 20vh;
   padding: 25px;
   background: url(../../images/bg-pentagon.svg);
   background-repeat: no-repeat;
@@ -52,7 +52,7 @@
   justify-content: space-between;
   align-items: center;
   margin: auto;
-  margin-top: 150px;
+  margin-top: 15vh;
   width: 800px;
 }
 .game-result > div img {
@@ -140,7 +140,6 @@
     height: 300px;
     width: 300px;
     background-size: 300px;
-    margin-top: 30px;
   }
 
   .game-pro > :nth-child(1) {
@@ -167,7 +166,6 @@
 
   .game-result {
     width: 900px;
-    margin-top: 100px;
   }
   .game-result > div img {
     width: 110px;
@@ -203,7 +201,6 @@
     height: 275px;
     width: 275px;
     background-size: 275px;
-    margin-top: 20px;
   }
 
   .game-pro > :nth-child(1) {
@@ -229,7 +226,6 @@
   }
   .game-result {
     width: 700px;
-    margin-top: 50px;
   }
   .game-result > div img {
     width: 90px;
@@ -266,7 +262,6 @@
     height: 250px;
     width: 250px;
     background-size: 250px;
-    margin-top: 20px;
   }
 
   .game-pro > :nth-child(1) {
@@ -292,8 +287,6 @@
   }
   .game-result {
     width: 540px;
-    margin: 0 auto;
-    margin-top: 120px;
   }
   .game-result > div img {
     width: 60px;
@@ -329,7 +322,6 @@
     height: 225px;
     width: 225px;
     background-size: 225px;
-    margin-top: 15px;
   }
 
   .game-pro > :nth-child(1) {
@@ -346,17 +338,16 @@
 
   .game-pro > :nth-child(4) {
     bottom: 10px;
-    left: 30px;
+    left: 40px;
   }
 
   .game-pro > :nth-child(5) {
     bottom: 10px;
-    right: 30px;
+    right: 40px;
   }
 
   .game-result {
     width: 410px;
-    margin-top: 100px;
   }
   .game-result > div img {
     width: 60px;
@@ -399,7 +390,6 @@
     height: 200px;
     width: 200px;
     background-size: 200px;
-    margin-top: 50px;
   }
 
   .game-pro > :nth-child(1) {
@@ -416,17 +406,16 @@
 
   .game-pro > :nth-child(4) {
     bottom: 8px;
-    left: 30px;
+    left: 40px;
   }
 
   .game-pro > :nth-child(5) {
     bottom: 8px;
-    right: 30px;
+    right: 40px;
   }
 
   .game-result {
     width: 300px;
-    margin-top: 80px;
   }
   .game-result > div img {
     width: 50px;
@@ -470,7 +459,6 @@
     height: 150px;
     width: 150px;
     background-size: 150px;
-    margin-top: 100px;
   }
 
   .game-pro > :nth-child(1) {
@@ -487,16 +475,15 @@
 
   .game-pro > :nth-child(4) {
     bottom: 5px;
-    left: 20px;
+    left: 30px;
   }
 
   .game-pro > :nth-child(5) {
     bottom: 5px;
-    right: 20px;
+    right: 30px;
   }
   .game-result {
     width: 250px;
-    margin-top: 60px;
   }
   .game-result > div img {
     width: 40px;
