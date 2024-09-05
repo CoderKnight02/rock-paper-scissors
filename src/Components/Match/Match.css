@@ -1,0 +1,520 @@
+/* Default styles for 1440px+ (large desktops) */
+.game-pro {
+  height: 350px;
+  width: 350px;
+  margin: auto;
+  margin-top: 20vh;
+  padding: 25px;
+  background: url(../../images/bg-pentagon.svg);
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  background-position: center;
+  background-size: 350px;
+  position: relative;
+}
+
+.game-pro > :nth-child(1) {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.game-pro > :nth-child(2) {
+  position: absolute;
+  top: 35%;
+  left: -20px;
+  transform: translateY(-35%);
+}
+
+.game-pro > :nth-child(3) {
+  position: absolute;
+  top: 35%;
+  right: -20px;
+  transform: translateY(-35%);
+}
+
+.game-pro > :nth-child(4) {
+  position: absolute;
+  bottom: -20px;
+  left: 40px;
+}
+
+.game-pro > :nth-child(5) {
+  position: absolute;
+  bottom: -20px;
+  right: 40px;
+}
+
+.game-result {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  margin-top: 15vh;
+  width: 800px;
+}
+.game-result > div img {
+  width: 100px;
+}
+
+.round-corner {
+  border-radius: 50%;
+  background-color: white;
+  border-style: solid;
+  border-width: 25px;
+}
+
+.inner-shadow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+}
+
+.game-result-button {
+  border-style: none;
+  color: hsl(217, 16%, 45%);
+  background-color: white;
+  box-sizing: border-box;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 200px;
+  cursor: pointer;
+  box-shadow: 3px 3px rgba(0, 0, 0, 0.39);
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-family: "Barlow Semi Condensed";
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1rem;
+}
+
+.loading {
+  height: 200px;
+  width: 200px;
+  background-color: gray;
+  border-radius: 50%;
+}
+
+.veredict {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: white;
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: "Barlow Semi Condensed";
+}
+
+/* Apply the animation to the winner class with a delay */
+.winner {
+  box-shadow: 0 0 0 30px rgba(255, 255, 255, 0.1),
+    0 0 0 60px rgba(255, 255, 255, 0.1), 0 0 0 90px rgba(255, 255, 255, 0.1),
+    0 10px rgba(0, 0, 0, 0.5) !important;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Desktops (1025px - 1439px) */
+@media (min-width: 1025px) and (max-width: 1439px) {
+  .game-pro {
+    height: 300px;
+    width: 300px;
+    background-size: 300px;
+  }
+
+  .game-pro > :nth-child(1) {
+    top: -15px;
+  }
+
+  .game-pro > :nth-child(2) {
+    left: -15px;
+  }
+
+  .game-pro > :nth-child(3) {
+    right: -15px;
+  }
+
+  .game-pro > :nth-child(4) {
+    bottom: -10px;
+    left: 20px;
+  }
+
+  .game-pro > :nth-child(5) {
+    bottom: -10px;
+    right: 20px;
+  }
+
+  .game-result {
+    width: 900px;
+  }
+  .game-result > div img {
+    width: 110px;
+  }
+  .inner-shadow,
+  .loading {
+    height: 220px;
+    width: 220px;
+  }
+
+  .game-result-button {
+    width: 220px;
+    font-size: 1.1rem;
+  }
+  .veredict {
+    font-size: 3.5rem;
+  }
+  .winner {
+    box-shadow: 0 0 0 22px rgba(255, 255, 255, 0.1),
+      0 0 0 44px rgba(255, 255, 255, 0.1), 0 0 0 66px rgba(255, 255, 255, 0.1),
+      0 8px rgba(0, 0, 0, 0.5) !important;
+  }
+
+  .round-corner {
+    border-width: 22px;
+    box-shadow: 0px 7px rgba(255, 255, 255, 0.3);
+  }
+}
+
+/* Tablets and Small Laptops (768px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .game-pro {
+    height: 275px;
+    width: 275px;
+    background-size: 275px;
+  }
+
+  .game-pro > :nth-child(1) {
+    top: -2px;
+  }
+
+  .game-pro > :nth-child(2) {
+    left: -2px;
+  }
+
+  .game-pro > :nth-child(3) {
+    right: -2px;
+  }
+
+  .game-pro > :nth-child(4) {
+    bottom: -2px;
+    left: 40px;
+  }
+
+  .game-pro > :nth-child(5) {
+    bottom: -2px;
+    right: 40px;
+  }
+  .game-result {
+    width: 700px;
+  }
+  .game-result > div img {
+    width: 90px;
+  }
+  .inner-shadow,
+  .loading {
+    height: 180px;
+    width: 180px;
+  }
+  .game-result-button {
+    width: 180px;
+    font-size: 1rem;
+  }
+  .veredict {
+    font-size: 3rem;
+  }
+
+  .winner {
+    box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1),
+      0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1),
+      0 7px rgba(0, 0, 0, 0.5) !important;
+  }
+
+  .round-corner {
+    border-width: 20px;
+    box-shadow: 0px 6px rgba(255, 255, 255, 0.3);
+  }
+}
+
+/* Large Mobile Devices (550px - 767px) */
+@media (min-width: 551px) and (max-width: 768px) {
+  .game-pro {
+    box-sizing: border-box;
+    height: 250px;
+    width: 250px;
+    background-size: 250px;
+  }
+
+  .game-pro > :nth-child(1) {
+    top: -20px;
+  }
+
+  .game-pro > :nth-child(2) {
+    left: -20px;
+  }
+
+  .game-pro > :nth-child(3) {
+    right: -20px;
+  }
+
+  .game-pro > :nth-child(4) {
+    bottom: -20px;
+    left: 20px;
+  }
+
+  .game-pro > :nth-child(5) {
+    bottom: -20px;
+    right: 20px;
+  }
+  .game-result {
+    width: 540px;
+  }
+  .game-result > div img {
+    width: 60px;
+  }
+  .inner-shadow,
+  .loading {
+    height: 140px;
+    width: 140px;
+  }
+  .game-result-button {
+    width: 160px;
+    font-size: 0.9rem;
+  }
+  .veredict {
+    font-size: 2.5rem;
+  }
+
+  .winner {
+    box-shadow: 0 0 0 18px rgba(255, 255, 255, 0.1),
+      0 0 0 36px rgba(255, 255, 255, 0.1), 0 0 0 54px rgba(255, 255, 255, 0.1),
+      0 7px rgba(0, 0, 0, 0.5) !important;
+  }
+
+  .round-corner {
+    border-width: 18px;
+    box-shadow: 0px 5px rgba(255, 255, 255, 0.3);
+  }
+}
+
+/* Medium Mobile Devices (426px - 550px) */
+@media (min-width: 426px) and (max-width: 550px) {
+  .game-pro {
+    height: 225px;
+    width: 225px;
+    background-size: 225px;
+  }
+
+  .game-pro > :nth-child(1) {
+    top: 10px;
+  }
+
+  .game-pro > :nth-child(2) {
+    left: 10px;
+  }
+
+  .game-pro > :nth-child(3) {
+    right: 10px;
+  }
+
+  .game-pro > :nth-child(4) {
+    bottom: 10px;
+    left: 40px;
+  }
+
+  .game-pro > :nth-child(5) {
+    bottom: 10px;
+    right: 40px;
+  }
+
+  .game-result {
+    width: 410px;
+  }
+  .game-result > div img {
+    width: 60px;
+  }
+  .inner-shadow,
+  .loading {
+    height: 120px;
+    width: 120px;
+  }
+  .game-result-button {
+    width: 140px;
+    font-size: 0.85rem;
+  }
+
+  .mid-sect {
+    order: 3; /* Move the second item to the third position */
+    width: 100%; /* Make the second item take the full width in the new row */
+    margin-top: 20px; /* Add some space above the second item */
+    text-align: center; /* Center align content inside the second item */
+  }
+  .veredict {
+    font-size: 2rem;
+  }
+
+  .winner {
+    box-shadow: 0 0 0 15px rgba(255, 255, 255, 0.1),
+      0 0 0 30px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1),
+      0 6px rgba(0, 0, 0, 0.5) !important;
+  }
+
+  .round-corner {
+    border-width: 15px;
+    box-shadow: 0px 4px rgba(255, 255, 255, 0.3);
+  }
+}
+
+/* Small Mobile Devices (320px - 425px) */
+@media (min-width: 321px) and (max-width: 425px) {
+  .game-pro {
+    height: 200px;
+    width: 200px;
+    background-size: 200px;
+  }
+
+  .game-pro > :nth-child(1) {
+    top: 8px;
+  }
+
+  .game-pro > :nth-child(2) {
+    left: 8px;
+  }
+
+  .game-pro > :nth-child(3) {
+    right: 8px;
+  }
+
+  .game-pro > :nth-child(4) {
+    bottom: 8px;
+    left: 40px;
+  }
+
+  .game-pro > :nth-child(5) {
+    bottom: 8px;
+    right: 40px;
+  }
+
+  .game-result {
+    width: 300px;
+  }
+  .game-result > div img {
+    width: 50px;
+  }
+
+  .mid-sect {
+    order: 3; /* Move the second item to the third position */
+    width: 100%; /* Make the second item take the full width in the new row */
+    margin-top: 20px; /* Add some space above the second item */
+    text-align: center; /* Center align content inside the second item */
+  }
+
+  .inner-shadow,
+  .loading {
+    height: 100px;
+    width: 100px;
+  }
+  .game-result-button {
+    width: 120px;
+    font-size: 0.8rem;
+  }
+  .veredict {
+    font-size: 1.8rem;
+  }
+
+  .winner {
+    box-shadow: 0 0 0 12px rgba(255, 255, 255, 0.1),
+      0 0 0 24px rgba(255, 255, 255, 0.1), 0 0 0 36px rgba(255, 255, 255, 0.1),
+      0 7px rgba(0, 0, 0, 0.5) !important;
+  }
+
+  .round-corner {
+    border-width: 12px;
+    box-shadow: 0px 3px rgba(255, 255, 255, 0.3);
+  }
+}
+
+/* Extra Small Devices (Less than 320px) */
+@media (max-width: 320px) {
+  .game-pro {
+    height: 150px;
+    width: 150px;
+    background-size: 150px;
+  }
+
+  .game-pro > :nth-child(1) {
+    top: 5px;
+  }
+
+  .game-pro > :nth-child(2) {
+    left: 5px;
+  }
+
+  .game-pro > :nth-child(3) {
+    right: 5px;
+  }
+
+  .game-pro > :nth-child(4) {
+    bottom: 5px;
+    left: 30px;
+  }
+
+  .game-pro > :nth-child(5) {
+    bottom: 5px;
+    right: 30px;
+  }
+  .game-result {
+    width: 250px;
+  }
+  .game-result > div img {
+    width: 40px;
+  }
+
+  .mid-sect {
+    order: 3; /* Move the second item to the third position */
+    width: 100%; /* Make the second item take the full width in the new row */
+    margin-top: 20px; /* Add some space above the second item */
+    text-align: center; /* Center align content inside the second item */
+  }
+  .inner-shadow,
+  .loading {
+    height: 90px;
+    width: 90px;
+  }
+  .game-result-button {
+    width: 100px;
+    font-size: 0.75rem;
+  }
+  .veredict {
+    font-size: 1.5rem;
+  }
+  .winner {
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.1),
+      0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 30px rgba(255, 255, 255, 0.1),
+      0 6px rgba(0, 0, 0, 0.5) !important;
+  }
+
+  .round-corner {
+    border-width: 10px;
+    box-shadow: 0px 2px rgba(255, 255, 255, 0.3);
+  }
+}
