@@ -4,7 +4,6 @@ import Match from "../../Components/Match/Match.js";
 import "./Computer.css";
 import { MyContext } from "../../Context/ScoreProvider.js";
 import ScoreBar from "../../Components/ScoreBar/ScoreBar.js";
-import Footer from "../../Components/Footer/Footer.js";
 import { pieces } from "../../Components/Common/utiles.js"
 
 function Computer() {

@@ -1,7 +1,7 @@
 
 import { useContext } from "react";
 import { MyContext } from "../../Context/ScoreProvider";
-import { hexToRgb, pieces } from '../Common/utiles';
+import { hexToRgb, game_result } from '../Common/utiles';
 import "./Piece.css";
 function Piece(props) {
   const { setSelection, setResult, setCount, setOpponentSelection } = useContext(MyContext);
@@ -18,9 +18,8 @@ function Piece(props) {
       if (rand === props.piece) {
         outcome = "tie";
       } else {
-        const isWin = pieces[props.piece - 1][rand - 1];
+        const isWin = game_result[props.piece - 1][rand - 1];
         outcome = isWin ? "win" : "lose";
-
         // Update count based on the result
         setCount(prev => {
           const newCount = prev + (isWin ? 1 : -1);
