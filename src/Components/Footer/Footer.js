@@ -1,34 +1,30 @@
-import { io } from 'socket.io-client';
-import React, { useState, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import "./Footer.css";
 import rules from "../../images/image-rules-bonus.svg";
 import close from "../../images/icon-close.svg";
-
-const socket = io('http://localhost:3000');
-
-
+import { MyContext } from "../../Context/ScoreProvider"; // Use MyContext instead
+import CopyLink from '../CopyLink/CopyLink.js'
 function Footer() {
+  // States
   const [togglePopup, setTogglePopup] = useState(false);
-  const [toggleInvitePopup, setToggleInvitePopup] = useState(false);
-  const [invitationLink, setInvitationLink] = useState(false);
+  const [toggleInvitePopup, setToggleInvitePopup] = useState(false)
 
-  // Function to request an invitation link
+  // From Context
+  const { playComputer, setPlayComputer, navigate } = useContext(MyContext); // Use MyContext here
+
   const createInvitation = () => {
-    setToggleInvitePopup(true)
-    socket.emit('createInvitation');
-  };
-
-  // Listen for the generated invitation link
-  useEffect(() => {
-    socket.on('invitationLink', (link) => {
-      setInvitationLink(link);
-      setToggleInvitePopup(true); // Open the invite popup when the link is received
+    setPlayComputer(prev => {
+      const newPlayComputer = !prev;
+      if (newPlayComputer) {
+        navigate('/');
+        setToggleInvitePopup(false);
+      } else {
+        navigate(`/play/1234`);
+        setToggleInvitePopup(true);
+      }
+      return newPlayComputer;
     });
-
-    return () => {
-      socket.off('invitationLink');
-    };
-  }, []);
+  };
 
   return (
     <footer className="footer">
@@ -45,25 +41,27 @@ function Footer() {
           </div>
         </div>
       )}
-
-      {/* Invite Popup */}
       {toggleInvitePopup && (
         <div className="popup">
-          <div className="popup-content">
+          <div className="popup-content invitepopup">
             <header className="popup-header">
-              <h2>Invite a Friend</h2>
+              <h2>wait for your friend to connect</h2>
               <button onClick={() => setToggleInvitePopup(false)}>
                 <img src={close} alt="close"></img>
               </button>
             </header>
-            <p>Here is your invitation link:</p>
-            <a href={invitationLink} target="_blank" rel="noopener noreferrer">{invitationLink}</a>
+            <div className="loader"></div>
+            <h2 className="share-text">Share this with your friend</h2>
+            <CopyLink link={'http://www.goolge.com'} />
           </div>
         </div>
       )}
-
-      <button className="rules" onClick={() => setTogglePopup(true)}>Rules</button>
-      <button className="invite" onClick={createInvitation}>Play With Friend</button>
+      <button className="invite" onClick={createInvitation}>
+        Play With {playComputer ? "Friend" : "Computer"}
+      </button>
+      <button className="rules" onClick={() => setTogglePopup(true)}>
+        Rules
+      </button>
     </footer>
   );
 }

@@ -1,3 +1,17 @@
+import rock from "../../images/icon-rock.svg";
+import scissors from "../../images/icon-scissors.svg";
+import spock from "../../images/icon-spock.svg";
+import lizard from "../../images/icon-lizard.svg";
+import paper from "../../images/icon-paper.svg";
+
+export const pieces = [
+    { url: rock, color: "#ed143d", piece: 1 },
+    { url: scissors, color: "#ffa500", piece: 2 },
+    { url: lizard, color: "#cb26cb", piece: 3 },
+    { url: spock, color: "#87cefa", piece: 4 },
+    { url: paper, color: "#6495ed", piece: 5 },
+];
+
 export function hexToRgb(hex) {
     // Remove the leading # if it's there
     hex = hex.replace(/^#/, '');

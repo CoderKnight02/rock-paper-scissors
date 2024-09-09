@@ -36,7 +36,7 @@ footer > button.invite {
     right: auto; /* Reset right positioning */
   }
   footer > button.invite {
-    left: 25% ;
+    left: 25%;
   }
   footer > button.rules {
     transform: translateX(50%);
@@ -80,10 +80,14 @@ footer > button:hover {
   padding-inline: 5px;
 }
 
-.popup-header h2 {
+.popup-header h2,
+.share-text {
   font-family: "Barlow Semi Condensed";
   text-transform: uppercase;
   color: hsl(229, 25%, 31%);
+}
+.share-text {
+  margin-bottom: 30px;
 }
 .popup-header button {
   cursor: pointer;
@@ -95,5 +99,34 @@ footer > button:hover {
 @media (max-width: 425px) {
   .popup-content {
     width: 250px;
+  }
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 15px;
+  aspect-ratio: 1;
+  margin-inline: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border-radius: 50%;
+  animation: l5 1s infinite linear alternate;
+}
+@keyframes l5 {
+  0% {
+    box-shadow: 20px 0 hsl(229, 25%, 31%), -20px 0 rgb(59, 67, 99, 0.2);
+    background: hsl(229, 25%, 31%);
+  }
+  33% {
+    box-shadow: 20px 0 hsl(229, 25%, 31%), -20px 0 rgb(59, 67, 99, 0.2);
+    background: rgb(59, 67, 99, 0.2);
+  }
+  66% {
+    box-shadow: 20px 0 rgb(59, 67, 99, 0.2), -20px 0 hsl(229, 25%, 31%);
+    background: rgb(59, 67, 99, 0.2);
+  }
+  100% {
+    box-shadow: 20px 0 rgb(59, 67, 99, 0.2), -20px 0 hsl(229, 25%, 31%);
+    background: hsl(229, 25%, 31%);
   }
 }

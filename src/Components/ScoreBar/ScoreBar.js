@@ -1,7 +1,7 @@
 import "./ScoreBar.css";
 import React, { useContext } from "react";
 import logo from "../../images/logo-bonus.svg";
-import { MyContext } from "../Providers/ScoreProvider";
+import { MyContext } from "../../Context/ScoreProvider";
 
 function ScoreBar() {
   const { count, setCount } = useContext(MyContext);
