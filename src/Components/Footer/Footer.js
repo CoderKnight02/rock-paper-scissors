@@ -7,24 +7,44 @@ import CopyLink from '../CopyLink/CopyLink.js'
 function Footer() {
   // States
   const [togglePopup, setTogglePopup] = useState(false);
-  const [toggleInvitePopup, setToggleInvitePopup] = useState(false)
+  // const [toggleInvitePopup, setToggleInvitePopup] = useState(false)
 
   // From Context
-  const { playComputer, setPlayComputer, navigate } = useContext(MyContext); // Use MyContext here
+  const { playComputer, setPlayComputer, navigate, socket, setInvitationLink,toggleInvitePopup, 
+    setToggleInvitePopup } = useContext(MyContext); // Use MyContext here
 
   const createInvitation = () => {
     setPlayComputer(prev => {
       const newPlayComputer = !prev;
+
       if (newPlayComputer) {
+        // Navigate and hide invite popup when playComputer is set to true
         navigate('/');
         setToggleInvitePopup(false);
       } else {
-        navigate(`/play/1234`);
-        setToggleInvitePopup(true);
+        // Ensure socket is defined before emitting
+        if (socket) {
+          socket.emit('create-room', (err, roomId) => {
+            if (!err) {
+              const invitationLink = `${window.location.origin}/play/${roomId}`;
+              setInvitationLink(invitationLink);
+              navigate(`/play/${roomId}`);
+            } else {
+              navigate('/');
+            }
+          });
+          // Show invite popup after emitting
+          setToggleInvitePopup(true);
+        } else {
+          console.error('Socket is not initialized');
+        }
       }
+
+      // Return new state
       return newPlayComputer;
     });
   };
+
 
   return (
     <footer className="footer">
@@ -52,7 +72,7 @@ function Footer() {
             </header>
             <div className="loader"></div>
             <h2 className="share-text">Share this with your friend</h2>
-            <CopyLink link={'http://www.goolge.com'} />
+            <CopyLink />
           </div>
         </div>
       )}

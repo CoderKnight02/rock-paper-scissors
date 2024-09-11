@@ -4,13 +4,13 @@ import logo from "../../images/logo-bonus.svg";
 import { MyContext } from "../../Context/ScoreProvider";
 
 function ScoreBar() {
-  const { count, setCount } = useContext(MyContext);
+  const { count } = useContext(MyContext);
 
   return (
     <div className="score-bar">
       <img src={logo} className="Logo" alt="logo" />
       <div className="score-section">
-        <h2 onClick={()=> setCount(count+1)}>Score</h2>
+        <h2>Score</h2>
         <div className="score">{count}</div>
       </div>
     </div>
