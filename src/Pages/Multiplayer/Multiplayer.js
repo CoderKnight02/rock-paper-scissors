@@ -26,7 +26,7 @@ function Multiplayer() {
                 })
             }
         }
-
+        
     }, [location.pathname, navigate, socket]);
 
     return (
