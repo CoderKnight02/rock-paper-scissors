@@ -10,8 +10,8 @@ function Footer() {
   // const [toggleInvitePopup, setToggleInvitePopup] = useState(false)
 
   // From Context
-  const { playComputer, setPlayComputer, navigate, socket, setInvitationLink,toggleInvitePopup, 
-    setToggleInvitePopup } = useContext(MyContext); // Use MyContext here
+  const { playComputer, setPlayComputer, navigate, setInvitationLink, toggleInvitePopup,
+    setToggleInvitePopup, room, socket } = useContext(MyContext); // Use MyContext here
 
   const createInvitation = () => {
     setPlayComputer(prev => {
@@ -19,24 +19,31 @@ function Footer() {
 
       if (newPlayComputer) {
         // Navigate and hide invite popup when playComputer is set to true
+        socket.emit('leave-room', room);
         navigate('/');
         setToggleInvitePopup(false);
       } else {
         // Ensure socket is defined before emitting
-        if (socket) {
+        if (socket && socket.connected) {
           socket.emit('create-room', (err, roomId) => {
             if (!err) {
               const invitationLink = `${window.location.origin}/play/${roomId}`;
               setInvitationLink(invitationLink);
               navigate(`/play/${roomId}`);
             } else {
+              setToggleInvitePopup(false);
               navigate('/');
+              return true
             }
           });
           // Show invite popup after emitting
           setToggleInvitePopup(true);
         } else {
+          setToggleInvitePopup(false);
           console.error('Socket is not initialized');
+          alert('Sorry an error ocurred on our end, please try again later')
+          navigate('/')
+          return true;
         }
       }
 
@@ -63,7 +70,7 @@ function Footer() {
       )}
       {toggleInvitePopup && (
         <div className="popup">
-          <div className="popup-content invitepopup">
+          <div className="popup-content">
             <header className="popup-header">
               <h2>wait for your friend to connect</h2>
               <button onClick={() => setToggleInvitePopup(false)}>

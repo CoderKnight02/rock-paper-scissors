@@ -6,20 +6,20 @@ import paper from "../../images/icon-paper.svg"
 
 export const pieces = [
     { url: rock, color: "#ed143d", piece: 1 },
-    { url: scissors, color: "#ffa500", piece: 2 },
-    { url: lizard, color: "#cb26cb", piece: 3 },
-    { url: spock, color: "#87cefa", piece: 4 },
-    { url: paper, color: "#6495ed", piece: 5 },
+    { url: paper, color: "#6495ed", piece: 2 },
+    { url: scissors, color: "#ffa500", piece: 3 },
+    { url: lizard, color: "#cb26cb", piece: 4 },
+    { url: spock, color: "#87cefa", piece: 5 },
 ]
 
 export const game_result = [
-//   R      Pa     S     L     Sp
-    [false, false, true, true, false], // rock
-    [true, false, false, false, true],  // paper
-    [false, true, false, true, false], // scissors
-    [false, true, false, false, true],  // lizard
-    [true, false, true, false, false], // spock
-]
+    //   R      Pa     S     L     Sp
+    [false, false, true, true, false],  // Rock (Rock loses to Paper and Spock, wins against Scissors and Lizard)
+    [true, false, false, false, true],  // Paper (Paper wins against Rock and Spock, loses to Scissors and Lizard)
+    [false, true, false, true, false],  // Scissors (Scissors loses to Rock and Spock, wins against Paper and Lizard)
+    [false, true, false, false, true],  // Lizard (Lizard loses to Rock and Scissors, wins against Paper and Spock)
+    [true, false, true, false, false],  // Spock (Spock wins against Rock and Scissors, loses to Paper and Lizard)
+];
 
 export function hexToRgb(hex) {
     // Remove the leading # if it's there

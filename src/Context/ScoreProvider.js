@@ -13,7 +13,7 @@ export const ScoreProvider = ({ children }) => {
     sessionStorage.setItem("count", count);
   }, [count]);
 
-  const [socket, setSocket] = useState({});
+  const [socket, setSocket] = useState(null);
   const [player_1, setPlayer_1] = useState(-1);
   const [player_2, setPlayer_2] = useState(-1);
   const [room, setRoom] = useState('');
@@ -28,8 +28,8 @@ export const ScoreProvider = ({ children }) => {
   const location = useLocation();
 
   useEffect(() => {
-    if (!socket.connected) {
-      const newSocket = io('http://localhost:8080');
+    if (!socket) {
+      const newSocket = io(process.env.REACT_APP_SOCKET_URL || 'http://localhost:8080');
       setSocket(newSocket);
       console.log(newSocket);
 
@@ -47,28 +47,48 @@ export const ScoreProvider = ({ children }) => {
           setPlayer_2(payload.players[playerId_1].score);
         }
 
-        console.log(payload.players[playerId_1], payload.players[playerId_2], payload, 'the game is ready');
         setToggleInvitePopup(false);
         setMatchReady(true);
+      });
+
+      newSocket.on('player-left', () => {
+        setPlayComputer(true)
+        setMatchReady(false)
+        setRoom('')
+        setSelection(0)
+        setOpponentSelection(0)
+        setPlayer_1(-1)
+        setPlayer_2(-1)
+        alert('opponent-left')
+        navigate('/')
+        newSocket.emit('leave-room', room);
       });
 
 
       newSocket.on('match', (res) => {
         console.log(res);
 
-        // let list = Object.keys(res);
-        // if (list[0] === newSocket.id) {
-        //   setResult(res[list[0]].result)
-        //   setOpponentSelection(res[list[0]].selection)
-        // } else {
-        //   setResult(res[list[1]].result)
-        //   setOpponentSelection(res[list[1]].selection)
-        // }
+        let list = Object.keys(res);
+        if (list[0] === newSocket.id) {
+          setResult(res[list[0]].result)
+          setOpponentSelection(res[list[0]].selection)
+          setPlayer_1(res[list[0]].score)
+          setPlayer_2(res[list[1]].score)
+        } else {
+          setResult(res[list[1]].result)
+          setOpponentSelection(res[list[1]].selection)
+          setPlayer_1(res[list[1]].score)
+          setPlayer_2(res[list[0]].score)
+        }
       })
 
       return () => {
-        newSocket.disconnect();
+        if (socket) {
+          socket.emit('leave-room', room);
+          socket.disconnect();
+        }
       };
+
 
     }
   }, []);

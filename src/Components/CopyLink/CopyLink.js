@@ -9,10 +9,28 @@ const CopyLinkButton = () => {
     const { invitationLink } = useContext(MyContext);
 
     const handleCopy = () => {
-        navigator.clipboard.writeText(invitationLink).then(() => {
-            setCopied(true);
-            setTimeout(() => setCopied(false), 2000); // Reset copied state after 2 seconds
-        });
+        if (navigator.clipboard) {
+            navigator.clipboard.writeText(invitationLink).then(() => {
+                setCopied(true);
+                setTimeout(() => setCopied(false), 2000); // Reset copied state after 2 seconds
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+        } else {
+            // Fallback for browsers that don't support Clipboard API
+            const textarea = document.createElement('textarea');
+            textarea.value = invitationLink;
+            document.body.appendChild(textarea);
+            textarea.select();
+            try {
+                document.execCommand('copy');
+                setCopied(true);
+                setTimeout(() => setCopied(false), 2000); // Reset copied state after 2 seconds
+            } catch (err) {
+                console.error('Fallback: Failed to copy', err);
+            }
+            document.body.removeChild(textarea);
+        }
     };
 
     return (

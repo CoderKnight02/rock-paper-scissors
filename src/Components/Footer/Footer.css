@@ -1,13 +1,16 @@
 .footer {
-  padding-bottom: 10px;
-  padding-right: 40px;
-  bottom: 0;
-  left: 0;
-}
-footer > button {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px; /* Add some space between the buttons */
+  padding: 10px;
   position: fixed;
-  bottom: 40px; /* Distance from the bottom of the page */
-  right: 40px;
+  bottom: 0;
+  padding-bottom: 20px;
+  width: 100%;
+  background-color: transparent; /* You can adjust this if needed */
+}
+
+footer > button {
   border: 3px solid hsl(217, 16%, 45%);
   color: white;
   width: 150px;
@@ -23,30 +26,28 @@ footer > button {
   transition: background-color 0.2s, color 0.2s;
 }
 
-footer > button.invite {
-  left: 40px;
-}
-
-@media (max-width: 780px) {
-  footer > button {
-    position: fixed;
-    bottom: 20px; /* Adjust if needed */
-    right: 25%;
-    transform: translateX(-50%);
-    right: auto; /* Reset right positioning */
-  }
-  footer > button.invite {
-    left: 25%;
-  }
-  footer > button.rules {
-    transform: translateX(50%);
-  }
-}
-
 footer > button:hover {
   color: hsl(217, 16%, 45%);
   background-color: white;
   transition: 0.2s;
+}
+
+@media (max-width: 780px) {
+  footer > button {
+    font-size: 0.9rem; /* Smaller font size for medium screens */
+    width: 130px; /* Adjust button width if necessary */
+  }
+}
+
+@media (max-width: 425px) {
+  .footer {
+    flex-direction: column; /* Stack buttons vertically on smaller screens */
+    align-items: center;
+  }
+  footer > button {
+    font-size: 0.8rem; /* Even smaller font size for small screens */
+    width: 120px;
+  }
 }
 
 .popup {
@@ -93,13 +94,6 @@ footer > button:hover {
   cursor: pointer;
   background-color: transparent;
   border-style: none;
-}
-
-/* Small Mobile Devices (320px - 425px) */
-@media (max-width: 425px) {
-  .popup-content {
-    width: 250px;
-  }
 }
 
 /* HTML: <div class="loader"></div> */

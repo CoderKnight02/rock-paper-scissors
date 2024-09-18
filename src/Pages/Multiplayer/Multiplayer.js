@@ -1,12 +1,14 @@
 import { useEffect, useContext } from "react";
 import "./Multiplayer.css";
 import Piece from "../../Components/Common/Piece.js";
+import Match from "../../Components/Match/Match.js";
 import { pieces } from "../../Components/Common/utiles.js";
 import MultiplayerScoreBar from "../../Components/MultiplayerScoreBar/MultiplayerScoreBar.js";
 import { MyContext } from "../../Context/ScoreProvider";
 
 function Multiplayer() {
-    const { socket, location, navigate, setPlayComputer } = useContext(MyContext); // Use MyContext here
+    const { socket, location, navigate, setPlayComputer, selection } = useContext(MyContext); 
+    // Use MyContext here
 
     useEffect(() => {
         let roomId = location.pathname.split("/")[2];
@@ -21,22 +23,26 @@ function Multiplayer() {
                 socket.emit('join-room', { roomId }, (err) => {
                     if (err) {
                         console.error("Error joining room:", err);
+                        setPlayComputer(true)
                         navigate('/');
                     }
                 })
             }
         }
-        
+
     }, [location.pathname, navigate, socket]);
 
     return (
         <>
             <MultiplayerScoreBar />
-            <div className="game-pro">
-                {pieces.map(({ url, color, piece }) => (
-                    <Piece key={piece} url={url} color={color} piece={piece} />
-                ))}
-            </div>
+            {selection === 0 && (
+                <div className="game-pro">
+                    {pieces.map(({ url, color, piece }) => (
+                        <Piece key={piece} url={url} color={color} piece={piece} />
+                    ))}
+                </div>
+            )}
+            {selection !== 0 && (<Match />)}
         </>
     );
 }

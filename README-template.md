@@ -1,6 +1,14 @@
-# Frontend Mentor - Rock, Paper, Scissors solution
+# 1. Rock, Paper, Scissors, Lizard, Spock Game
 
-This is a solution to the [Rock, Paper, Scissors challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+100 Projects Till I Get Hired: Project 1 - Rock, Paper, Scissors, Lizard, Spock
+
+This is the first project in my personal series, 100 Projects Till I Get Hired, where I challenge myself to build 100 unique projects. The goal is to grow my skills, learn new technologies, and demonstrate my journey as a mid-level developer. This series is not just about coding—it’s about collaboration, sharing knowledge, and inspiring others.
+
+In this project, I tackled the Rock, Paper, Scissors challenge from Frontend Mentor, enhancing the classic game with real-time multiplayer functionality using React, Node.js, and Socket.io.
+
+Through this series, I aim to improve, inspire collaboration via pull requests, and pass on what I learn to friends who are just starting their journey into the amazing world of software development. I’m not an expert, but by working on these projects, I hope to continue growing my expertise and ultimately land my dream job in tech.
+
+Stay tuned as I document my progress, learn, and share insights from each project along the way.
 
 ## Table of contents
 
@@ -24,10 +32,9 @@ This is a solution to the [Rock, Paper, Scissors challenge on Frontend Mentor](h
 
 Users should be able to:
 
-- View the optimal layout for the game depending on their device's screen size
-- Play Rock, Paper, Scissors against the computer
-- Maintain the state of the score after refreshing the browser _(optional)_
-- **Bonus**: Play Rock, Paper, Scissors, Lizard, Spock against the computer _(optional)_
+- Experience a responsive game layout that adapts seamlessly to different screen sizes.
+- Play Rock, Paper, Scissors, Lizard, Spock against the Computer or a Friend through real-time socket connections.
+- Maintain the state of the score after refreshing the browser
 
 ### Screenshot
 

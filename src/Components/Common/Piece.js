@@ -4,44 +4,45 @@ import { MyContext } from "../../Context/ScoreProvider";
 import { hexToRgb, game_result } from '../Common/utiles';
 import "./Piece.css";
 function Piece(props) {
-  const { setSelection, setResult, setCount, setOpponentSelection, playComputer, socket, matchReady, room, navigate } = useContext(MyContext);
+  const { setSelection, setResult, setCount, setOpponentSelection, playComputer, socket, matchReady, room, navigate, setPlayComputer } = useContext(MyContext);
 
 
   function manageSelection() {
 
     if (playComputer === true) {
+      setSelection(props.piece);
 
-      // Introduce a delay for the computer's decision
+      // Delay the computer's decision
       setTimeout(() => {
-        let outcome;
-        const rand = Math.floor(Math.random() * 5) + 1;
+        const rand = Math.floor(Math.random() * 5) + 1; // Computer's choice
         setOpponentSelection(rand);
 
-        // Determine the result after the delay
+        let outcome;
+
+        // Check for tie
         if (rand === props.piece) {
           outcome = "tie";
         } else {
+          // Determine if player wins or loses using the matrix
           const isWin = game_result[props.piece - 1][rand - 1];
           outcome = isWin ? "win" : "lose";
-          // Update count based on the result
-          setCount(prev => {
-            const newCount = prev + (isWin ? 1 : -1);
-            return newCount >= 0 ? newCount : 0;
-          });
+
+          // Update the count
+          setCount(prev => Math.max(0, prev + (isWin ? 1 : -1)));
         }
 
-        // Update the result
+        // Set the result after the decision is made
         setResult(outcome);
 
-      }, 1000);
+      }, 1000); // 1 second delay
     }
     else if (matchReady === true) {
       setSelection(props.piece)
-      console.log('we are getting here')
       socket.emit('selection', { roomId: room, piece: props.piece }, (err) => {
         if (err) {
-          console.error(err) 
-          navigate('/') 
+          console.error(err)
+          setPlayComputer(true)
+          navigate('/')
         }
       });
 
@@ -62,7 +63,6 @@ function Piece(props) {
       }}
 
       onClick={() => {
-        console.log(matchReady)
         manageSelection()
       }
       }
