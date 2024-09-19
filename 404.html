@@ -1,8 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="refresh" content="0; URL='/rock-paper-scissors/'" />
-    <meta http-equiv="refresh" content="0; URL='/rock-paper-scissors/'" />
+    <script type="text/javascript">
+      // Preserve the full URL and redirect to it
+      var redirectUrl = window.location.pathname;
+      var baseUrl = "/rock-paper-scissors"; // Ensure this matches your repo name
+      var finalRedirect = baseUrl + redirectUrl;
+
+      // Redirect to the preserved URL
+      window.location.replace(finalRedirect);
+    </script>
   </head>
   <body>
     <p>Redirecting...</p>
