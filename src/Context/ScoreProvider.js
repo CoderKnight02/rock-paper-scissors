@@ -29,7 +29,7 @@ export const ScoreProvider = ({ children }) => {
 
   useEffect(() => {
     if (!socket) {
-      const newSocket = io(process.env.REACT_APP_SOCKET_URL || 'http://localhost:8080');
+      const newSocket = io(process.env.REACT_APP_SOCKET_URL);
       setSocket(newSocket);
       console.log(newSocket);
 
