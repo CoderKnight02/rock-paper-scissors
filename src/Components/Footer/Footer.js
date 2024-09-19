@@ -11,17 +11,19 @@ function Footer() {
 
   // From Context
   const { playComputer, setPlayComputer, navigate, setInvitationLink, toggleInvitePopup,
-    setToggleInvitePopup, room, socket } = useContext(MyContext); // Use MyContext here
+    setToggleInvitePopup, room, socket, setOpponentSelection, setSelection } = useContext(MyContext); // Use MyContext here
 
   const createInvitation = () => {
     setPlayComputer(prev => {
       const newPlayComputer = !prev;
-
+      setOpponentSelection(0)
+      setSelection(0)
       if (newPlayComputer) {
         // Navigate and hide invite popup when playComputer is set to true
-        socket.emit('leave-room', room);
         navigate('/');
+        socket.emit('leave-room', room);
         setToggleInvitePopup(false);
+
       } else {
         // Ensure socket is defined before emitting
         if (socket && socket.connected) {
@@ -30,14 +32,14 @@ function Footer() {
               const invitationLink = `${window.location.origin}/rock-paper-scissors/#/play/${roomId}`;
               setInvitationLink(invitationLink);
               navigate(`/play/${roomId}`);
+              setToggleInvitePopup(true);
             } else {
-              setToggleInvitePopup(false);
               navigate('/');
+              setToggleInvitePopup(false);
               return true
             }
           });
-          // Show invite popup after emitting
-          setToggleInvitePopup(true);
+
         } else {
           setToggleInvitePopup(false);
           console.error('Socket is not initialized');
@@ -46,7 +48,6 @@ function Footer() {
           return true;
         }
       }
-
       // Return new state
       return newPlayComputer;
     });

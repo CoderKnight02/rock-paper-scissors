@@ -59,8 +59,8 @@ export const ScoreProvider = ({ children }) => {
         setOpponentSelection(0)
         setPlayer_1(-1)
         setPlayer_2(-1)
-        alert('opponent-left')
         navigate('/')
+        alert('opponent-left')
         newSocket.emit('leave-room', room);
       });
 
