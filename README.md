@@ -1,127 +1,115 @@
-# Frontend Mentor - Rock, Paper, Scissors
+# 1. Rock, Paper, Scissors, Lizard, Spock Game
 
-![Design preview for the Rock, Paper, Scissors coding challenge](./design/desktop-preview.jpg)
+100 Projects Till I Get Hired: Project 1 - Rock, Paper, Scissors, Lizard, Spock
 
-## Welcome! 👋
+This is the first project in my personal series, 100 Projects Till I Get Hired, where I challenge myself to build 100 unique projects. The goal is to grow my skills, learn new technologies, and demonstrate my journey as a mid-level developer. This series is not just about coding—it’s about collaboration, sharing knowledge, and inspiring others.
 
-Thanks for checking out this front-end coding challenge.
+In this project, I tackled the Rock, Paper, Scissors challenge from Frontend Mentor, enhancing the classic game with real-time multiplayer functionality using React, Node.js, and Socket.io.
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+Through this series, I aim to improve, inspire collaboration via pull requests, and pass on what I learn to friends who are just starting their journey into the amazing world of software development. I’m not an expert, but by working on these projects, I hope to continue growing my expertise and ultimately land my dream job in tech.
 
-**To do this challenge, you need a basic understanding of HTML, CSS and JavaScript.**
+Stay tuned as I document my progress, learn, and share insights from each project along the way.
 
-## The challenge
+## Table of contents
 
-Your challenge is to build out this Rock, Paper, Scissors game and get it looking as close to the design as possible.
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [Architecture Overview](#architecture-overview)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
+**Note: Delete this note and update the table of contents based on what sections you keep.**
 
-Your users should be able to:
+## Overview
 
-- View the optimal layout for the game depending on their device's screen size
-- Play Rock, Paper, Scissors against the computer
-- **Bonus**: Maintain the state of the score after refreshing the browser
-- **Bonus**: Play Rock, Paper, Scissors, Lizard, Spock against the computer
+### The challenge
 
-### Rules
+1. Real-Time Synchronization
+Challenge: Implementing real-time game state synchronization between multiple players across different devices required handling connection issues, disconnections, and updates to the game state without causing inconsistencies.
+Solution: Leveraging Socket.io allowed real-time bidirectional communication between the server and clients. Careful handling of connection events, like player disconnects and reconnections, ensured that the game state was synchronized, even when a player left and rejoined.
+2. Handling Dynamic Room Creation
+Challenge: Dynamically generating rooms for players to join, while ensuring that players who shared a link could easily connect to the correct room.
+Solution: Rooms were generated on the server using unique IDs (UUIDs), and players could join rooms through custom links. To handle routing on GitHub Pages, HashRouter was used to manage client-side navigation, allowing players to join specific rooms by clicking on the link.
+3. GitHub Pages and Client-Side Routing
+Challenge: GitHub Pages only serves static files, making it difficult to handle dynamic routes, which led to 404 errors when users accessed dynamically generated room URLs.
+Solution: HashRouter was implemented to ensure proper client-side routing without relying on server-side functionality. Additionally, careful construction of the room URL ensured that players could join rooms via unique invitation links without encountering errors.
+4. Managing Socket Disconnections
+Challenge: When a player disconnected, ensuring the room and game state were updated properly for the remaining players.
+Solution: Using socket.leave() ensured that players were removed from rooms properly when they disconnected or left, preventing any lingering notifications or game state issues for the remaining participants.
 
-If the player wins, they gain 1 point. If the computer wins, the player loses one point.
 
-#### Original
+### Screenshot
 
-- Paper beats Rock
-- Rock beats Scissors
-- Scissors beats Paper
+![](./screenshot.png)
 
-#### Learned
-## Save a variable value when Refreshed
-Local Storage: Simple and effective for most cases where you need persistence within the same browser across sessions.
-## Session Storage: Useful when the data only needs to persist during a single session.
-## Cookies: Use for small data or when you need to include data in HTTP headers.
-## Backend Storage: Best for cross-device or cross-session persistence.
-## IndexedDB: Useful for storing complex data structures or larger amounts of data.
 
-#### Bonus
+### Links
 
-- Scissors beats Paper
-- Paper beats Rock
-- Rock beats Lizard
-- Lizard beats Spock
-- Spock beats Scissors
-- Scissors beats Lizard
-- Paper beats Spock
-- Rock beats Scissors
-- Lizard beats Paper
-- Spock beats Rock
+- Backend URL: (https://github.com/CoderKnight02/rock-paper-scissors-server)
+- Live Site URL: (https://coderknight02.github.io/rock-paper-scissors/)
 
-Not sure what Rock, Paper, Scissors, Lizard, Spock is? [Check out this clip from The Big Bang Theory](https://www.youtube.com/watch?v=iSHPVCBsnLw).
+## My process
 
-Want some support on the challenge? [Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
+### Built with
 
-## Where to find everything
+1. CSS:
+Required Knowledge: Basic knowledge of CSS is sufficient, but certain aspects are important for responsive design and presentation:
+Importing Google Fonts for custom typography.
+Using media queries for responsive layouts.
+Basics of animation for smooth interactions.
+Understanding responsive units such as vw (viewport width) and vh (viewport height).
+Basic element positioning, with a focus on flexbox for handling layout alignment and distribution.
+2. HTML:
+Required Knowledge: HTML is straightforward, but there are a few important concepts:
+Familiarity with basic tags and event emitters, especially for buttons (onclick).
+Most importantly, understanding how to maintain the game’s state (score tracking) using sessionStorage to persist data across page reloads.
+3. JavaScript:
+Required Knowledge: While the basics are essential, this project involves some specific JS patterns:
+Using a matrix to handle the game logic, which required knowledge of module.exports for exporting functions and data across files.
+Callback functions like forEach and map for array manipulation.
+Understanding dictionaries (objects) as the primary data structure for handling rooms and players, especially with in-memory storage for the socket rooms.
+4. React:
+Required Knowledge: React required a deeper understanding of component lifecycle and state management:
+Knowledge of Context.Provider for managing global state across components.
+Dynamic routing (e.g., HashRouter for client-side routing on GitHub Pages).
+Use of the useEffect hook for handling side effects and network requests.
+A basic understanding of React’s component lifecycle and how it ties into event handling and rendering updates.
+5. Node.js:
+Required Knowledge: The backend setup involved fundamental Node.js concepts:
+Setting up a basic web server using Express and enabling Cross-Origin Resource Sharing (CORS).
+Using environment variables with .env for managing configuration.
+Running the development server with nodemon for auto-reloading on changes.
+Most importantly, integrating Socket.io for real-time communication between players in different rooms, which forms the core of the project’s architecture.
 
-Your task is to build out the project to the designs inside the `/design` folder. You can either choose the `original` designs for the simpler version or the `bonus` designs for the harder version. You will find both mobile and desktop versions of the design to work to. Each file is also named depending on which step in the game the design is for.
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
+### Architecture Overview
 
-If you would like the design files (we provide Sketch & Figma versions) to inspect the design in more detail, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+Backend:
+The backend is responsible for hosting the real-time connection using Socket.io. This enables players to join rooms, send game actions, and receive live updates from other players. It’s built using Node.js and Express, which provides a lightweight web server for handling connections, with CORS enabled to allow cross-origin requests between the frontend and backend.
+The core of the backend revolves around in-memory storage for rooms and players, where each game room is tracked, and player interactions are managed. The backend listens for events like players joining or leaving rooms and broadcasts updates to other players in the same room.
 
-You will find all the required assets in the `/images` folder. The assets are already optimized.
+Frontend:
+The frontend is a React application that provides an interactive and responsive UI for players. It manages the game state, handles user actions, and updates the display in real time as messages are sent and received from the backend via Socket.io.
+React plays a crucial role in managing the application's state, routing, and lifecycle through components. The Context API is used to maintain global state across different parts of the application, while dynamic routing (via HashRouter) ensures players can join specific game rooms based on their unique room IDs.
+The use of React hooks like useEffect ensures that components react to changes in state or props and perform side effects, such as connecting to rooms or updating game data when needed.
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
 
-## Building your project
+**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+### Useful resources
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
+- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
 
-## Deploying your project
+**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
 
-As mentioned above, there are many ways to host your project for free. Our recommended hosts are:
+## Author
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+- Website - [Add your name here](https://www.your-site.com)
+- Linkedin - [@manuel](www.linkedin.com/in/manuel-bacallao-pérez)
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://medium.com/frontend-mentor/frontend-mentor-trusted-hosting-providers-bf000dfebe).
-
-## Create a custom `README.md`
-
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
-
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
-
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
-
-## Submitting your solution
-
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) for tips on how to do this.
-
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
-
-## Sharing your solution
-
-There are multiple places you can share your solution:
-
-1. Share your solution page in the **#finished-projects** channel of the [community](https://www.frontendmentor.io/community). 
-2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on other social channels like LinkedIn.
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
-
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
-
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
-
-## Got feedback for us?
-
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
-
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
-
-**Have fun building!** 🚀

@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import "./MultiplayerScoreBar.css";
 import { MyContext } from "../../Context/ScoreProvider";
 
 
@@ -9,7 +8,7 @@ function MultiplayerScoreBar() {
 
     return (
         <>
-            <div className="score-bar vs-section">
+            <div className="score-bar">
 
                 <div className="score-section">
                     <h2>Your Score</h2>
