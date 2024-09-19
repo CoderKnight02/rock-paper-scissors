@@ -27,7 +27,7 @@ function Footer() {
         if (socket && socket.connected) {
           socket.emit('create-room', (err, roomId) => {
             if (!err) {
-              const invitationLink = `${window.location.origin}/play/${roomId}`;
+              const invitationLink = `${window.location.origin}/#${window.location.pathname}/play/${roomId}`;
               setInvitationLink(invitationLink);
               navigate(`/play/${roomId}`);
             } else {

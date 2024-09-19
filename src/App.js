@@ -3,7 +3,7 @@ import "./App.css";
 import Computer from "./Pages/Computer/Computer.js";
 import Multiplayer from "./Pages/Multiplayer/Multiplayer.js";
 import { ScoreProvider } from "./Context/ScoreProvider.js";
-import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
+import { HashRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import Footer from './Components/Footer/Footer.js'
 function App() {
   return (
